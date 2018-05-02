@@ -1,4 +1,8 @@
 language: cpp
-sudo: false
-compiler:
-- gcc
+compiler: gcc
+
+script:
+  - cmake
+  - cd build
+  - cmake --build .
+  - ctest
