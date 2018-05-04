@@ -20,7 +20,7 @@ bool checkNeighbourColors (int edge, bool **graph, int *color, int col, int size
        // std::cout << *(color + 2) << "  this is color from edge3" << std::endl;
        // std::cout << *(color + 3) << "  this is color from edge4" << std::endl;
 
-        if (graph[i][edge] && *(color + 1) > 0 && col == *(color + i))
+        if (graph[i][edge] && *(color + i) > 0 && col == *(color + i))
             return false;
     }
     return true;
@@ -108,12 +108,6 @@ int main()
     //color(numColors, te, numEdge);
 
     /*
-     * todo: sometimes adjecent edges get assigned the same color.
-     *
-     * testing:
-     * 1 1 1 0
-     * 1 1 0 1
-     * 1 0 1 1
-     * 0 1 1 1
+     * todo: write tests
      */
 }
