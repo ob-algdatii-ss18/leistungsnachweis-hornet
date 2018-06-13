@@ -14,9 +14,9 @@ void printit(int *color, int size)
 bool checkNeighbourColors (int edge, bool **graph, int *color, int col, int size)
 {
     for (int i = 0; i < size; i++) {
-        std::cout << graph[edge][i] << "  this is graph" << std::endl;
-        std::cout << *(color + 0) << "  this is color from edge1" << std::endl;
-        std::cout << *(color + 1) << "  this is color from edge2" << std::endl;
+//        std::cout << graph[edge][i] << "  this is graph" << std::endl;
+//        std::cout << *(color + 0) << "  this is color from edge1" << std::endl;
+//        std::cout << *(color + 1) << "  this is color from edge2" << std::endl;
        // std::cout << *(color + 2) << "  this is color from edge3" << std::endl;
        // std::cout << *(color + 3) << "  this is color from edge4" << std::endl;
 
@@ -39,14 +39,16 @@ bool recColors(bool **graph, int numCol, int *color, int edge, int size)
         {
             *(color+edge) = col;
             if (recColors (graph, numCol, color, edge+1, size) == true) {
-                printit(color, size);
+
+
+                //printit(color, size);
                 return true;
             }
             *(color+edge) = 0;
         }
     }
 
-    std::cout << "Failed." << std::endl;
+    //std::cout << "Failed." << std::endl;
     return false;
 
 }
@@ -104,8 +106,12 @@ int main()
     for (int i = 0; i < numColors; i++)
         colors[i] = 0;
     // call with edge 0 as starting point.
-    recColors(te, numColors, colors, 0, numEdge);
+    bool tmp = recColors(te, numColors, colors, 0, numEdge);
     //color(numColors, te, numEdge);
+    if (tmp == 1)
+        printit(colors, numEdge);
+    else
+        std::cout<<"Failed"<<std::endl;
 
     /*
      * todo: write tests
