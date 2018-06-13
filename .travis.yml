@@ -1,8 +1,30 @@
+
 language: cpp
-compiler: gcc
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-6
+      - g++-6
+
+before_install:
+  - pip install --user cpp-coveralls
+
+before_script:
+  - mkdir build
+  - cd build
+  - cmake -DENABLE_COVERAGE=ON -DCMAKE_CXX_COMPILER="g++-6" ..
+  - mkdir output
 
 script:
-  - cmake
-  - cd build
   - cmake --build .
-  - ctest
+  - ctest .
+  - cd ..
+
+env:
+  global:
+    - GH_REPO_NAME=leistungsnachweis-algo
+    - DOXYFILE=$TRAVIS_BUILD_DIR/Doxyfile
+- GH_REPO_REF=github.com/ob-algdatii-ss18/leistungsnachweis-algo.git
