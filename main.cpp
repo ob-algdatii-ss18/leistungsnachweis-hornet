@@ -3,11 +3,20 @@
 
 
 /* A utility function to print solution */
-void printit(int *color, int size)
-{
+void printit(int *color, int size, bool **graph){
+
     std::cout << "Success: " << std::endl;
-    for (int i = 0; i < size; i++)
-        std::cout << "Edge " << i << ": " << *(color+i) << "\n" << std::endl;
+    for (int i = 0; i < size; i++){
+
+        for (int j = 0; j < size; j++) {
+            if(j>=i && graph[i][j])
+            std::cout<< i << " -- " << j << " " << std::endl;
+        }
+
+        std::cout << "Edge " << i << ": " << *(color + i) << "\n" << std::endl;
+
+
+    }
 }
 
 
@@ -109,7 +118,7 @@ int main()
     bool tmp = recColors(te, numColors, colors, 0, numEdge);
     //color(numColors, te, numEdge);
     if (tmp == 1)
-        printit(colors, numEdge);
+        printit(colors, numEdge, te);
     else
         std::cout<<"Failed"<<std::endl;
 
