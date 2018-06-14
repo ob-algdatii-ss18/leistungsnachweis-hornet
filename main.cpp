@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include <iostream>
-
+#include <cstdlib>
 #include <fstream>
 
 
@@ -31,6 +31,12 @@ void printit(int *color, int size, bool **graph){
 
     out << "}" << std::endl;
     out.close();
+
+    std::system("dot -Tpng output.dot -o out.png");
+    std::system("feh out.png");
+
+
+
 }
 
 
