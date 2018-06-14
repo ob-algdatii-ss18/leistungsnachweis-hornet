@@ -123,8 +123,12 @@ int main()
     //color(numColors, te, numEdge);
     if (tmp == 1)
         printit(colors, numEdge, te);
-    else
-        std::cout<<"Failed"<<std::endl;
+    else {
+        std::cout << "graph g{" << std::endl;
+        std::cout << "Failed [style=filled, fillcolor=\"red\"]" << std::endl;
+        std::cout << "}" << std::endl;
+
+    }
 
     /*
      * todo: write tests
