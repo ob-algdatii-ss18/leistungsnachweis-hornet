@@ -1,23 +1,36 @@
 #include<stdio.h>
 #include <iostream>
 
+#include <fstream>
 
-/* A utility function to print the solution in dot-syntax.*/
+
+/* A utility function to write the solution in dot-syntax to a file "output.txt".*/
+/**
+ * A utility function to write the solution in dot-syntax to a file "output.txt"
+ * @param color final color-array.
+ * @param size  size of graph and color-array
+ * @param graph graph.
+ */
 void printit(int *color, int size, bool **graph){
     // init a few colors.
     std::string* pStr = new std::string[8] { "red", "blue", "yellow", "green", "grey", "chocolate", "cyan", "orange" };
-    std::cout << "graph g{" << std::endl;
+    // init the writer
+    std::ofstream out("output.dot");
+
+    out << "graph g{" << std::endl;
 
     for (int i = 0; i < size; i++){
 
         for (int j = 0; j < size; j++) {
             if(j>=i && graph[i][j] && i!=j)
-            std::cout<< i << " -- " << j << " " << std::endl;
+            out<< i << " -- " << j << " " << std::endl;
         }
 
-        std::cout <<  i << " [style=filled, fillcolor=\"" << pStr[*(color + i)] << "\"]" << "\n" << std::endl;
+        out <<  i << " [style=filled, fillcolor=\"" << pStr[*(color + i)] << "\"]" << "\n" << std::endl;
     }
-    std::cout << "}" << std::endl;
+
+    out << "}" << std::endl;
+    out.close();
 }
 
 
