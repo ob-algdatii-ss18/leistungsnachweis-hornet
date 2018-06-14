@@ -2,10 +2,12 @@
 #include <iostream>
 
 
-/* A utility function to print solution */
+/* A utility function to print the solution in dot-syntax.*/
 void printit(int *color, int size, bool **graph){
+    // init a few colors.
     std::string* pStr = new std::string[8] { "red", "blue", "yellow", "green", "grey", "chocolate", "cyan", "orange" };
     std::cout << "graph g{" << std::endl;
+
     for (int i = 0; i < size; i++){
 
         for (int j = 0; j < size; j++) {
@@ -14,58 +16,61 @@ void printit(int *color, int size, bool **graph){
         }
 
         std::cout <<  i << " [style=filled, fillcolor=\"" << pStr[*(color + i)] << "\"]" << "\n" << std::endl;
-
-
     }
-
     std::cout << "}" << std::endl;
-
-    // digraph G { 1[label="Node color" style=filled color="dodgerblue" fillcolor="lightyellow" ]; }
 }
 
 
+/**
+ * ckeck all neighbours of a given edge.
+ * @param edge current Edge
+ * @param graph complete graph
+ * @param color current color-array
+ * @param col color of current edge
+ * @param size size of arrays.
+ * @return true if color is possible, else false.
+ */
 bool checkNeighbourColors (int edge, bool **graph, int *color, int col, int size)
 {
     for (int i = 0; i < size; i++) {
-//        std::cout << graph[edge][i] << "  this is graph" << std::endl;
-//        std::cout << *(color + 0) << "  this is color from edge1" << std::endl;
-//        std::cout << *(color + 1) << "  this is color from edge2" << std::endl;
-       // std::cout << *(color + 2) << "  this is color from edge3" << std::endl;
-       // std::cout << *(color + 3) << "  this is color from edge4" << std::endl;
-
         if (graph[i][edge] && *(color + i) > 0 && col == *(color + i))
             return false;
     }
     return true;
 }
 
+/**
+ *
+ * @param graph complete graph
+ * @param numCol number of colors that may be used
+ * @param color collor-array, init 0 on start.
+ * @param edge current edge, init 0
+ * @param size size of arrays.
+ * @return true if the graph can be colored given the number of colors, else false
+ */
 bool recColors(bool **graph, int numCol, int *color, int edge, int size)
 {
-    // (te, numColors, *colors, 0, numColors);
     if (edge == size)
         return true;
-    // iterate over all possible colors
     for (int col = 1; col <= numCol; col++)
     {
-        // check if edge can be assigned this color
         if (checkNeighbourColors(edge, graph, color, col, size))
         {
             *(color+edge) = col;
             if (recColors (graph, numCol, color, edge+1, size) == true) {
-
-
-                //printit(color, size);
                 return true;
             }
             *(color+edge) = 0;
         }
     }
-
-    //std::cout << "Failed." << std::endl;
     return false;
-
 }
 
+
+/**
+ * main
+ * @return dot-representation of result.
+ */
 int main()
 {
 
@@ -74,7 +79,7 @@ int main()
     int numEdge;
     std::cin>>numEdge;
 
-
+    // init values
     bool te2[numEdge][numEdge];
     bool **te;
     int val;
@@ -127,10 +132,5 @@ int main()
         std::cout << "graph g{" << std::endl;
         std::cout << "Failed [style=filled, fillcolor=\"red\"]" << std::endl;
         std::cout << "}" << std::endl;
-
     }
-
-    /*
-     * todo: write tests
-     */
 }
