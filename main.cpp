@@ -4,19 +4,23 @@
 
 /* A utility function to print solution */
 void printit(int *color, int size, bool **graph){
-
-    std::cout << "Success: " << std::endl;
+    std::string* pStr = new std::string[8] { "red", "blue", "yellow", "green", "grey", "chocolate", "cyan", "orange" };
+    std::cout << "graph g{" << std::endl;
     for (int i = 0; i < size; i++){
 
         for (int j = 0; j < size; j++) {
-            if(j>=i && graph[i][j])
+            if(j>=i && graph[i][j] && i!=j)
             std::cout<< i << " -- " << j << " " << std::endl;
         }
 
-        std::cout << "Edge " << i << ": " << *(color + i) << "\n" << std::endl;
+        std::cout <<  i << " [style=filled, fillcolor=\"" << pStr[*(color + i)] << "\"]" << "\n" << std::endl;
 
 
     }
+
+    std::cout << "}" << std::endl;
+
+    // digraph G { 1[label="Node color" style=filled color="dodgerblue" fillcolor="lightyellow" ]; }
 }
 
 
