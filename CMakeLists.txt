@@ -37,7 +37,6 @@ set(CMAKE_CXX_STANDARD 11)
 
 
 add_executable(leistungsnachweis-hornet main.cpp graph/ColorGraph.cpp graph/ColorGraph.h)
-add_subdirectory(test)
 
 add_executable(colorGraphTest test/TestGraph.cpp)
 target_link_libraries(colorGraphTest gtest gtest_main)
