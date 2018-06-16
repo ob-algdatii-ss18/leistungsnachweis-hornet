@@ -30,7 +30,7 @@ void ColorGraph::printIt(int *color, int size, bool **graph, bool toPicture) {
 
     if (toPicture) {
         std::system("dot -Tpng output.dot -o out.png");
-        std::system("feh out.png");
+        //std::system("feh out.png");
     }
 
 
@@ -72,7 +72,7 @@ bool ColorGraph::colorGraph(int numNode, int numColors, bool **graph) {
     bool tmp = recColors(graph, numColors, colors, 0, numNode);
     //color(numColors, te, numNode);
     if (tmp == 1)
-        printIt(colors, numNode, graph, false);
+        printIt(colors, numNode, graph, true);
     else {
         std::cout << "graph g{" << std::endl;
         std::cout << "Failed [style=filled, fillcolor=\"red\"]" << std::endl;
