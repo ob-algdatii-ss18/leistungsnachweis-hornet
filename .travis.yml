@@ -25,6 +25,9 @@ script:
 
 env:
   global:
-    - GH_REPO_NAME=leistungsnachweis-algo
+    - GH_REPO_NAME=leistungsnachweis-hornet
     - DOXYFILE=$TRAVIS_BUILD_DIR/Doxyfile
-    - GH_REPO_REF=github.com/ob-algdatii-ss18/leistungsnachweis-algo.git
+    - GH_REPO_REF=github.com/ob-algdatii-ss18/leistungsnachweis-hornet.git
+    
+after_success:
+- coveralls --root . --exclude googletest --exclude test --exclude "build/CMakeFiles/feature_tests.*"
