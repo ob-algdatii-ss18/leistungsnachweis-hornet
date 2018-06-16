@@ -62,6 +62,7 @@ bool ColorGraph::recColors(bool **graph, int numCol, int *color, int edge, int s
 
 
 bool ColorGraph::colorGraph(int numNode, int numColors, bool **graph) {
+    std::cout << numNode;
     // call the function that does the coloring.
     // initialize the color-array, one color for each
     int colors[numNode];
