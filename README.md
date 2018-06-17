@@ -6,4 +6,5 @@ Es soll zu einem gegebenen Graphen und einer gegebenen Anzahl an Farben ermittel
 
 Dieser Graph soll mittels graphviz visualisiert werden.
 
+["Website"](https://ob-algdatii-ss18.github.io/leistungsnachweis-hornet/)
 [Dokumentation](https://ob-algdatii-ss18.github.io/leistungsnachweis-hornet/doc/index.html)
