@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/ob-algdatii-ss18/leistungsnachweis-hornet.svg?branch=master)](https://travis-ci.org/ob-algdatii-ss18/leistungsnachweis-hornet)
-[![Coverage Status](https://coveralls.io/repos/github/ob-algdatii-ss18/leistungsnachweis-hornet/badge.svg?branch=master)](https://coveralls.io/github/ob-algdatii-ss18/leistungsnachweis-hornet?branch=master)
 
 # Graphen faerben 
 
