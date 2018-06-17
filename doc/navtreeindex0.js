@@ -1,0 +1,21 @@
+var NAVTREEINDEX0 =
+{
+"_color_graph_8cpp.html":[1,0,0,0,0,0],
+"_color_graph_8h.html":[1,0,0,0,0,1],
+"_color_graph_8h_source.html":[1,0,0,0,0,1],
+"annotated.html":[0,0],
+"class_color_graph.html":[0,0,0],
+"class_color_graph.html#a1971f5011f5500fecfea3c9381885ba9":[0,0,0,1],
+"class_color_graph.html#a62de3fed822562bb4a1b5a6bbb928211":[0,0,0,0],
+"class_color_graph.html#a81582d7d4671b8ecc7329d49fa7fd74a":[0,0,0,3],
+"class_color_graph.html#aae72342bea17a61d077ae982bbd34478":[0,0,0,2],
+"classes.html":[0,1],
+"dir_2459330074353087196c768fabf2c4b2.html":[1,0,0,0,0],
+"dir_50d6560ce34f7c3e443ce2c4a8bbf474.html":[1,0,0,0],
+"dir_ac19baa589f01f16dbb9a2baac13e37d.html":[1,0,0],
+"files.html":[1,0],
+"functions.html":[0,2,0],
+"functions_func.html":[0,2,1],
+"index.html":[],
+"pages.html":[]
+};
