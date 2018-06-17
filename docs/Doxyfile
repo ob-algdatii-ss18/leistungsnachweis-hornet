@@ -1,0 +1,11 @@
+PROJECT_NAME           = "Graph Coloring"
+
+PROJECT_NUMBER         =
+
+INPUT                  = ../graph
+
+RECURSIVE              = YES
+
+GENERATE_LATEX         = NO
+
+GENERATE_HTML          = YES
