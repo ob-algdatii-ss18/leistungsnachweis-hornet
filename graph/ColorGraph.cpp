@@ -72,11 +72,13 @@ bool ColorGraph::colorGraph(int numNode, int numColors, bool **graph) {
     // call with edge 0 as starting point.
     bool tmp = recColors(graph, numColors, colors, 0, numNode);
     //color(numColors, te, numNode);
-    if (tmp == 1)
+    if (tmp == 1) {
         printIt(colors, numNode, graph, true);
-    else {
+        return true;
+    } else {
         std::cout << "graph g{" << std::endl;
         std::cout << "Failed [style=filled, fillcolor=\"red\"]" << std::endl;
         std::cout << "}" << std::endl;
+        return false;
     }
 }

@@ -13,5 +13,5 @@ TEST(graphColorTest, fourNodesFourColorsValidTest){
             graph[i][j] = array[i][j];
         }
     }
-    EXPECT_EQ(colorGraph.colorGraph(numNode, numColors, graph), true);
+    EXPECT_TRUE(colorGraph.colorGraph(numNode, numColors, graph));
 }
