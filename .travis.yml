@@ -18,4 +18,4 @@ script:
   - ctest
     
 after_success:
-  - coveralls --root .. --exclude build/CMakeFiles/ --exclude build/googletest-src/
+  - coveralls -E ".build/googletest.*" -E ".build/CMakeFiles.*" --gcov-options "\-lp"
