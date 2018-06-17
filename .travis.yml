@@ -9,6 +9,7 @@ script:
   - cd build
   - cmake --build .
   - ctest
+  - cd ..
 
 after_success:
-  - coveralls --root .. --exclude build/CMakeFiles/ --exclude build/googletest-src/
+  - coveralls --exclude build/CMakeFiles/ --exclude build/googletest-src/
