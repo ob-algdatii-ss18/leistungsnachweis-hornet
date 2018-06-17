@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Graph Coloring | leistungsnachweis-hornet</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Graph Coloring" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="leistungsnachweis-hornet created by GitHub Classroom" />
+<meta property="og:description" content="leistungsnachweis-hornet created by GitHub Classroom" />
+<link rel="canonical" href="https://ob-algdatii-ss18.github.io/leistungsnachweis-hornet/" />
+<meta property="og:url" content="https://ob-algdatii-ss18.github.io/leistungsnachweis-hornet/" />
+<meta property="og:site_name" content="leistungsnachweis-hornet" />
+<script type="application/ld+json">
+{"name":"leistungsnachweis-hornet","description":"leistungsnachweis-hornet created by GitHub Classroom","@type":"WebSite","url":"https://ob-algdatii-ss18.github.io/leistungsnachweis-hornet/","headline":"Graph Coloring","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="/leistungsnachweis-hornet/assets/css/style.css?v=78eb4e83bbc223b5ea7021b63a4500288a7cc485">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">leistungsnachweis-hornet</h1>
+      <h2 class="project-tagline">leistungsnachweis-hornet created by GitHub Classroom</h2>
+      
+        <a href="https://github.com/ob-algdatii-ss18/leistungsnachweis-hornet" class="btn">View on GitHub</a>
+      
+      
+    </section>
+
+    <section class="main-content">
+      <h1 id="graph-coloring">Graph Coloring</h1>
+<p><a href="https://travis-ci.org/ob-algdatii-ss18/leistungsnachweis-hornet"><img src="https://travis-ci.org/ob-algdatii-ss18/leistungsnachweis-hornet.svg?branch=master" alt="Build Status" /></a>
+<a href="https://coveralls.io/github/ob-algdatii-ss18/leistungsnachweis-hornet?branch=master"><img src="https://coveralls.io/repos/github/ob-algdatii-ss18/leistungsnachweis-hornet/badge.png?branch=master" alt="Coverage Status" /></a> 
+<a href="https://ob-algdatii-ss18.github.io/leistungsnachweis-hornet/">Website</a> |
+<a href="https://ob-algdatii-ss18.github.io/leistungsnachweis-hornet/doc/index.html">Documentation</a></p>
+
+<h1 id="beschreibung">Beschreibung</h1>
+<p>Zu einem gegebenen Graphen und einer gegebenen Anzahl an Farben wird ermittelt, ob und wie dieser Graph mittels der gegebenen Farben so gefaerbt werden kann, dass kein Knoten die selbe Farbe besitzt wie einer seiner Nachbarn besitzt.</p>
+
+<p>Dieser Graph wird mittels graphviz visualisiert.</p>
+
+<h1 id="description">Description</h1>
+<p>For a given graph and an amount of given colors it should be checked if the Graph could be colored in such a way that no node has a neighbor with the same color.</p>
+
+<p>This graph is then visualized with graphviz.</p>
+
+<h1 id="build-instructions">Build Instructions</h1>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake <span class="nt">-H</span><span class="nb">.</span> <span class="nt">-Bbuild</span>
+<span class="nb">cd </span>build
+cmake <span class="nt">--build</span> <span class="nb">.</span>
+ctest
+</code></pre></div></div>
+
+<h1 id="usage-information">Usage Information</h1>
+
+<p>Execute the project and follow the instructions.</p>
+
+<h1 id="example">Example</h1>
+<p><em>green lines are input</em></p>
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\Studium\algodatii\cmake-build-debug\leistungsnachweis-hornet.exe
+enter number of nodes
+<span class="gi">+ 4
+</span>Your graph has 4 Nodes.
+Please enter the Connections each node has, set 1 for a connection, 0 for none.
+Please seperate your input with a blank.
+0 1 2 3 
+<span class="gi">+ 1 1 1 1
++ 1 1 1 1
++ 1 1 1 1
++ 1 1 1 1
+</span>Please enter the number of colors.
+<span class="gi">+4
+</span>
+Process finished with exit code 0
+</code></pre></div></div>
+
+<p>output dot file:</p>
+<div class="language-dot highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">graph</span> <span class="nv">g</span><span class="p">{</span>
+<span class="mi">0</span> <span class="o">--</span> <span class="mi">1</span> 
+<span class="mi">0</span> <span class="o">--</span> <span class="mi">2</span> 
+<span class="mi">0</span> <span class="o">--</span> <span class="mi">3</span> 
+<span class="mi">0</span> <span class="o">[</span><span class="n">style</span><span class="p">=</span><span class="nv">filled</span><span class="p">,</span> <span class="n">fillcolor</span><span class="p">=</span><span class="s2">"blue"</span><span class="o">]</span>
+
+<span class="mi">1</span> <span class="o">--</span> <span class="mi">2</span> 
+<span class="mi">1</span> <span class="o">--</span> <span class="mi">3</span> 
+<span class="mi">1</span> <span class="o">[</span><span class="n">style</span><span class="p">=</span><span class="nv">filled</span><span class="p">,</span> <span class="n">fillcolor</span><span class="p">=</span><span class="s2">"yellow"</span><span class="o">]</span>
+
+<span class="mi">2</span> <span class="o">--</span> <span class="mi">3</span> 
+<span class="mi">2</span> <span class="o">[</span><span class="n">style</span><span class="p">=</span><span class="nv">filled</span><span class="p">,</span> <span class="n">fillcolor</span><span class="p">=</span><span class="s2">"green"</span><span class="o">]</span>
+
+<span class="mi">3</span> <span class="o">[</span><span class="n">style</span><span class="p">=</span><span class="nv">filled</span><span class="p">,</span> <span class="n">fillcolor</span><span class="p">=</span><span class="s2">"grey"</span><span class="o">]</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>output image visualization:</p>
+
+<p><img src="https://github.com/ob-algdatii-ss18/leistungsnachweis-hornet/blob/master/out.png"/></p>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/ob-algdatii-ss18/leistungsnachweis-hornet">leistungsnachweis-hornet</a> is maintained by <a href="https://github.com/ob-algdatii-ss18">ob-algdatii-ss18</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </section>
+
+    
+  </body>
+</html>
