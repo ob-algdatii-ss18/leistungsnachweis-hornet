@@ -1,4 +1,5 @@
-language: cpp
+language: 
+  - cpp
 
 before_install:
   - pip install --user cpp-coveralls
@@ -9,9 +10,10 @@ before_script:
   - cmake -DENABLE_COVERAGE=ON ..
 
 script:
+  - cmake -H. -Bbuild
+  - cd build
   - cmake --build .
-  - ctest .
-  - cd ..
+  - ctest
     
 after_success:
   - coveralls --root .. --exclude build/CMakeFiles/ --exclude build/googletest-src/
