@@ -9,18 +9,11 @@ before_script:
   - mkdir build
   - cd build
   - cmake -DENABLE_COVERAGE=ON ..
-  - mkdir output
 
 script:
   - cmake --build .
   - ctest .
   - cd ..
-
-env:
-  global:
-    - GH_REPO_NAME=leistungsnachweis-hornet
-    - DOXYFILE=$TRAVIS_BUILD_DIR/Doxyfile
-    - GH_REPO_REF=github.com/ob-algdatii-ss18/leistungsnachweis-hornet.git
     
 after_success:
   - coveralls --exclude build/CMakeFiles/ --exclude build/gtest/ --exclude build/args/ --gcov "llvm-cov gcov" --gcov-options '\-lp'
