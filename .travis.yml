@@ -16,4 +16,4 @@ script:
   - cd ..
     
 after_success:
-  - coveralls --exclude build/CMakeFiles/ --exclude build/gtest/ --exclude build/args/ --gcov "llvm-cov gcov" --gcov-options '\-lp'
+  - coveralls --root .. --exclude build/CMakeFiles/ --exclude build/googletest-src/
