@@ -10,12 +10,17 @@ before_install:
   - pip install --user cpp-coveralls
   - sudo apt-get update -qq
   - sudo apt-get install libboost-dev
-
+  
+before_script:
+  - mkdir build
+  - cd build
+  - cmake -DENABLE_COVERAGE=ON ..
+  - cd ..
+  
 script:
-  - cmake -H. -Bbuild
   - cd build
   - cmake --build .
-  - ctest
+  - ctest .
     
 after_success:
-  - coveralls --root .. --exclude build/CMakeFiles/ --exclude build/googletest-src/
+  - coveralls --exclude build/CMakeFiles/ --exclude build/gtest/ --exclude build/args/ --gcov "llvm-cov gcov" --gcov-options '\-lp'
