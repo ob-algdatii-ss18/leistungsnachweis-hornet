@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.9)
 project(leistungsnachweis-hornet)
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -fprofile-arcs -ftest-coverage")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
 
 enable_testing()
 
