@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.9)
 project(leistungsnachweis-hornet)
 
+enable_testing()
+
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
@@ -34,7 +36,6 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
 endif()
 
 set(CMAKE_CXX_STANDARD 11)
-
 
 add_executable(leistungsnachweis-hornet main.cpp graph/ColorGraph.cpp graph/ColorGraph.h)
 
