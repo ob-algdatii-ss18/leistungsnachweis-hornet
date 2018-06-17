@@ -1,13 +1,6 @@
 
 language: cpp
-
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - gcc-6
-      - g++-6
+compiler: clang
 
 before_install:
   - pip install --user cpp-coveralls
@@ -15,7 +8,7 @@ before_install:
 before_script:
   - mkdir build
   - cd build
-  - cmake -DENABLE_COVERAGE=ON -DCMAKE_CXX_COMPILER="g++-6" ..
+  - cmake -DENABLE_COVERAGE=ON ..
   - mkdir output
 
 script:
