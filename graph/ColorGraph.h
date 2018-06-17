@@ -1,11 +1,19 @@
 #ifndef LEISTUNGSNACHWEIS_HORNET_GRAPH_COLOR_H
 #define LEISTUNGSNACHWEIS_HORNET_GRAPH_COLOR_H
 
-
+/**
+ * Colors Graphs
+ */
 class ColorGraph {
 public:
 
-    //TODO: DOC
+    /**
+     * Colors a given graph.
+     * @param numNode number of nodes in the graph
+     * @param numColors number of colors the graph should be colored in
+     * @param graph matrix representation of the graph
+     * @return boolean if the coloring was successful
+     */
     bool colorGraph(int numNode, int numColors, bool **graph);
 
 private:
