@@ -40,6 +40,4 @@ endif()
 
 add_executable(leistungsnachweis-hornet main.cpp graph/ColorGraph.cpp graph/ColorGraph.h)
 
-add_executable(colorGraphTest test/TestGraph.cpp graph/ColorGraph.cpp graph/ColorGraph.h)
-target_link_libraries(colorGraphTest gtest gtest_main)
-add_test(NAME colorGraphTest COMMAND colorGraphTest)
+add_subdirectory(test)
