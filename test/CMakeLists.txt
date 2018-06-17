@@ -7,3 +7,5 @@ target_link_libraries(colorGraphTest gtest gtest_main)
 include_directories("..")
 
 add_test(NAME colorGraphTest COMMAND colorGraphTest)
+
+enable_testing()
