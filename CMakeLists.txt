@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.9)
 project(leistungsnachweis-hornet)
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+
 enable_testing()
 
 # Download and unpack googletest at configure time
@@ -34,8 +37,6 @@ add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
 if (CMAKE_VERSION VERSION_LESS 2.8.11)
     include_directories("${gtest_SOURCE_DIR}/include")
 endif()
-
-set(CMAKE_CXX_STANDARD 11)
 
 add_executable(leistungsnachweis-hornet main.cpp graph/ColorGraph.cpp graph/ColorGraph.h)
 
