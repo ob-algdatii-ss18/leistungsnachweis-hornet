@@ -15,7 +15,7 @@ before_install:
 before_script:
   - mkdir build
   - cd build
-  - cmake -DENABLE_COVERAGE=ON
+  - cmake -DENABLE_COVERAGE=ON ..
   - mkdir output
 
 script:
