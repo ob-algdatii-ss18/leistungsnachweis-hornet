@@ -1,10 +1,24 @@
 language: 
   - cpp
 
+branches:
+  except:
+    - gh-pages
+
+env:
+  global:
+    - GH_REPO_NAME: leistungsnachweis-hornet
+    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
+    - GH_REPO_REF: github.com/ob-algdatii-ss18/leistungsnachweis-hornet.git
+
 addons:
   apt:
     packages:
       - doxygen
+      - doxygen-doc
+      - doxygen-latex
+      - doxygen-gui
+      - graphviz
 
 before_install:
   - pip install --user cpp-coveralls
@@ -14,10 +28,9 @@ script:
   - cd build
   - cmake --build .
   - ctest
-  - cd ..
-  - cd docs
-  - doxygen
-  - make html
 
 after_success:
   - coveralls --root .. --exclude build/CMakeFiles/ --exclude build/googletest-src/ --gcov-options '\-lp'
+  - cd $TRAVIS_BUILD_DIR
+  - chmod +x generateDocumentationAndDeploy.sh
+  - ./generateDocumentationAndDeploy.sh
