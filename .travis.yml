@@ -9,7 +9,6 @@ script:
   - cd build
   - cmake --build .
   - ctest
-  - cd ..
 
 after_success:
-  - coveralls --exclude build/CMakeFiles/ --exclude build/googletest-src/ --gcov-options '\-lp'
+  - coveralls --root .. --exclude build/CMakeFiles/ --exclude build/googletest-src/ --gcov-options '\-lp'
