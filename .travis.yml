@@ -1,21 +1,13 @@
 
 language: cpp
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - gcc-6
-      - g++-6
-
 before_install:
   - pip install --user cpp-coveralls
 
 before_script:
   - mkdir build
   - cd build
-  - cmake -DENABLE_COVERAGE=ON -DCMAKE_CXX_COMPILER="g++-6" ..
+  - cmake -DENABLE_COVERAGE=ON
   - mkdir output
 
 script:
@@ -30,4 +22,4 @@ env:
     - GH_REPO_REF=github.com/ob-algdatii-ss18/leistungsnachweis-hornet.git
     
 after_success:
-- coveralls --root . --exclude googletest --exclude test --exclude "build/CMakeFiles/feature_tests.*"
+  - coveralls --exclude build/CMakeFiles/ --exclude build/gtest/ --exclude build/args/ --gcov "llvm-cov gcov" --gcov-options '\-lp'
