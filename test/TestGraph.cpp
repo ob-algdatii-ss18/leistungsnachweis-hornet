@@ -28,5 +28,5 @@ TEST(graphColorTest, fourNodesOneColorInvalidTest){
             graph[i][j] = array[i][j];
         }
     }
-    EXPECT_TRUE(colorGraph.colorGraph(numNode, numColors, graph));
+    EXPECT_FALSE(colorGraph.colorGraph(numNode, numColors, graph));
 }
